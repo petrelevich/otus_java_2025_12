@@ -1,5 +1,7 @@
 import io.spring.gradle.dependencymanagement.dsl.DependencyManagementExtension
+import name.remal.gradle_plugins.sonarlint.SonarLintExtension
 import org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES
+import org.gradle.plugins.ide.idea.model.IdeaLanguageLevel
 
 plugins {
     id("fr.brouillard.oss.gradle.jgitver")
@@ -20,6 +22,7 @@ allprojects {
     val testcontainersBom: String by project
     val protobufBom: String by project
     val guava: String by project
+
 
     apply(plugin = "io.spring.dependency-management")
     dependencyManagement {
