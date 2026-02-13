@@ -39,7 +39,7 @@ public class ComparatorExample {
             return s1.compareTo(s2);
         });
 
-        // В этом случае можно перейти к стандартному компоратору
+        // В этом случае можно перейти к стандартному компаратору
         list.sort(Comparator.naturalOrder());
     }
 }
