@@ -28,7 +28,7 @@ public class AsyncRead implements AutoCloseable {
 
     /**
      * CompletionHandler -- callback для обработки результата асинхронной операции.
-     * Вызывается когда операция чтения завершена (успешно или с ошибкой).
+     * Вызывается, когда операция чтения завершена (успешно или с ошибкой).
      */
     private final CompletionHandler<Integer, ByteBuffer> completionHandler = new CompletionHandler<>() {
         // Позиция в файле для следующего чтения
