@@ -76,7 +76,7 @@ public class FilesExample {
 
     private void walk() {
         // Files.walk() - рекурсивный обход директории, возвращает Stream<Path>
-        // Ищем файлы *.java, выводим их соержимое
+        // Ищем файлы *.java, выводим их содержимое
         try (Stream<Path> paths = Files.walk(Paths.get("L17-nio"))) {
             var fileNames = paths.filter(Files::isRegularFile)
                     .filter(path -> path.getFileName().toString().contains(".java"))
