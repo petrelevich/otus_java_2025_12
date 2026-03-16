@@ -81,7 +81,7 @@ public class AsyncRead implements AutoCloseable {
     }
 
     private void read() throws InterruptedException {
-        // Читаем блок данных и вызываем методт completed() в completionHandler
+        // Читаем блок данных и вызываем метод completed() в completionHandler
         fileChannel.read(buffer, 0, buffer, completionHandler);
 
         Thread.sleep(2);

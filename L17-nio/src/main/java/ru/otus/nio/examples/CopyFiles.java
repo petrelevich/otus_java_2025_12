@@ -7,7 +7,7 @@ import java.nio.file.StandardOpenOption;
 
 public class CopyFiles {
     public static void main(String[] args) throws IOException {
-        copyFiles("textFile.txt", "textFile.bak");
+        copyFiles("L17-nio/textFile.txt", "textFile.bak");
     }
 
     public static void copyFiles(String srcFile, String destFile) throws IOException {
