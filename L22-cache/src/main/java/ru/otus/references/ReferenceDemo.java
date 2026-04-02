@@ -8,21 +8,24 @@ import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/** VM options: -Xmx256m -Xms256m -Xlog:gc=debug */
+/**
+ * VM options: -Xmx256m -Xms256m -Xlog:gc=debug
+ */
 @SuppressWarnings({"java:S125", "java:S1144", "java:S1215", "java:S1854", "java:S1481"})
 public class ReferenceDemo {
     private static final Logger logger = LoggerFactory.getLogger(ReferenceDemo.class);
 
     public static void main(String[] args) throws InterruptedException {
-        //        strong();
-        //        weak();
+        strong();
+//        weak();
 //        soft();
-         finalizeDemo();
-        // phantom();
-        // phantomDemo();
+//        finalizeDemo();
+//        phantom();
+//        phantomDemo();
     }
 
     private static void strong() {
@@ -138,14 +141,14 @@ public class ReferenceDemo {
         var phantomReference = new PhantomReference<>(a, refQueue);
 
         new Thread(() -> {
-                    try {
-                        logger.info("Waiting for object cleaning...");
-                        Reference<? extends BigObject> removed = refQueue.remove();
-                        logger.info("Object cleaned:{}", removed);
-                    } catch (InterruptedException e) {
-                        Thread.currentThread().interrupt();
-                    }
-                })
+            try {
+                logger.info("Waiting for object cleaning...");
+                Reference<? extends BigObject> removed = refQueue.remove();
+                logger.info("Object cleaned:{}", removed);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+        })
                 .start();
         Thread.sleep(TimeUnit.SECONDS.toMillis(3));
         logger.info("cleaning...");
