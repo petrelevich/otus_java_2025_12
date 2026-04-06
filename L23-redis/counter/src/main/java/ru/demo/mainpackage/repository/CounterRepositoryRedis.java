@@ -27,7 +27,7 @@ public class CounterRepositoryRedis implements CounterRepository {
         boolean initResult;
         try {
             log.info("init value:{}, try lock", stats);
-            initResult = lock.tryLock(100, 2, TimeUnit.SECONDS);
+            initResult = lock.tryLock(1, 2, TimeUnit.SECONDS);
             if (initResult) {
                 try {
                     log.info("init value:{}, locked", stats);
