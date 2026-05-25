@@ -38,6 +38,8 @@ allprojects {
     val bootstrap: String by project
     val springDocOpenapiUi: String by project
     val jsr305: String by project
+	
+	val grpc: String by project
 
     apply(plugin = "io.spring.dependency-management")
     dependencyManagement {
