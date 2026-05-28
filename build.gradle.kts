@@ -75,6 +75,10 @@ allprojects {
             dependency("org.springdoc:springdoc-openapi-starter-webmvc-ui:$springDocOpenapiUi")
 
             dependency("com.google.code.findbugs:jsr305:$jsr305")
+			
+			dependency("io.grpc:grpc-netty:$grpc")
+            dependency("io.grpc:grpc-protobuf:$grpc")
+            dependency("io.grpc:grpc-stub:$grpc")
         }
     }
 
