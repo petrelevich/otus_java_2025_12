@@ -19,6 +19,8 @@ import ru.otus.services.RabbitMqService;
 public class RabbitMqListeners {
 
     private final RabbitMqService rabbitMqService;
+
+    @SuppressWarnings("java:S2245")
     private final Random random = new Random();
 
     public RabbitMqListeners(RabbitMqService rabbitMqService) {
